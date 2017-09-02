@@ -1,0 +1,10 @@
+<div>
+<h1>Forecoming events:</h1>
+<li>
+	<% @events.each do |event| %>
+		<ol><%= event.name %> by <%= creator(event).name %>, already has <%= number_of_guests(event) %> <%= 'attendee'.pluralize(number_of_guests(event)) %></ol>
+	<% end %>
+</li>
+</div>
+
+

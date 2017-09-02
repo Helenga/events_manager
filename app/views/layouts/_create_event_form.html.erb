@@ -1,0 +1,9 @@
+<%= form_for(@event, url: save_event_path, method: :post) do |f| %>
+	<%= f.label 'Enter name of event:' %><br>
+	<%= f.text_field :name %><br>
+	<%= f.label 'Enter date:' %><br>
+	<%= f.date_field :date, max: future, min: today, placeholder: today %><br>
+	<%= f.label 'Enter location:' %><br>
+	<%= f.text_field :location %><br>
+	<%= f.submit 'Add event' %>
+<% end %>

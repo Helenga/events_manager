@@ -1,0 +1,20 @@
+<li>
+	<% @events.each do |event| %>
+		<ul><%= event.name %> already has 
+				<%= number_of_guests(event) %> 
+				<%= 'attendee'.pluralize(number_of_guests(event)) %>
+				<br><span>It is planned on <%= event.date %>
+				, its location: <%= event.location %></span>
+				<br><%= link_to 'Add attendees' %></ul> 
+	<% end %>
+</li>
+<div id='attitudes'>
+	<h3>Your all guests:</h3>
+	<% @events.each do |event| %>
+		<% event.attendees.each do |attendee| %>
+		<li>
+			<ol><%= attendee.name %></ol>
+		</li>
+		<% end %>
+	<% end %>
+</div>

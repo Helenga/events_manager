@@ -1,0 +1,10 @@
+<div class='nav'>
+	<% if logged_in? %>
+		<h3>logged as <%= link_to @current_user.name, @current_user %></h3>
+		<div><%= link_to 'Log out', logout_path, method: :delete %></div>
+		<div id='home'><%= link_to 'Go home', root_path %></div>
+	<% else %>
+		<div><%= link_to 'log in', login_path %></div>
+		<div><%= link_to 'sign up', new_user_path %></div>
+	<% end %>
+</div>

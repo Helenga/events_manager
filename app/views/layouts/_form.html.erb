@@ -1,0 +1,4 @@
+<%= form_for @user, url: path, method: :post do |f| %>
+	<%=f.text_field :name, placeholder: 'Your name...'%>
+	<%= f.submit '=>' %>
+<% end %>
